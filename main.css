@@ -14,6 +14,9 @@ body, html {
 .wrap-dark p a {
     color: #fff;
 }
+.wrap-dark .navbar-brand img {
+    max-height: 80px;
+}
 .wrap-light {
     background: #ef7520;
     border-bottom: 4px solid #fff004;
@@ -27,7 +30,7 @@ body, html {
     font-size: 18px;
     font-weight: 600;
 }
-.wrap-light .input-group-text {
+.wrap-light .input-group-text, .mobilecollapse .input-group-text {
     background-color: #fff;
     border-top: 2px solid #ccc;
     border-bottom: 2px solid #ccc;
@@ -36,7 +39,7 @@ body, html {
     color: #cb3f1c;
     border-radius: 6px;
 }
-.wrap-light .form-control {
+.wrap-light .form-control, .mobilecollapse .form-control {
     border-top: 2px solid #ccc;
     border-bottom: 2px solid #ccc;
     border-left: none;
@@ -47,11 +50,45 @@ body, html {
 .wrap-light .social {
     font-size: 28px;
 }
+/* Mobile Navigation */
+.mobilecollapse {
+    position: absolute;
+    z-index: 999;
+    background: #fff;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  a.mobile-menu {
+      color: #000;
+      background: #fff;
+      padding: 15px 30px;
+  }
+  a.mobile-menu.collapsed {
+      background: none;
+      padding: 15px 30px;
+      color: #fff!important;
+  }
+  .mobilecollapse .sidebar .card {
+      box-shadow: none;
+  }
+.content-top-mobile .cart {
+    width: 100%;
+    padding: 15px;
+}
+.mobilecollapse .input-group-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.mobilecollapse .form-control {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: auto;
+}
 
 /* Content */
 .sidebar .card {
     border: 0;
-
     -webkit-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
     -moz-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
     box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
@@ -121,14 +158,6 @@ body, html {
     padding-right: 5px;
     float: right;
 }
-/*.content-right .cart-link {
-    color: #fff;
-    background: #cb2f07;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    margin-right: 10px;
-}*/
 .content-top .cart-total {
     background: #fff;
     border-radius: 5px;
@@ -350,39 +379,21 @@ font-size: 12px;
     color: #5b5b5d;
     font-weight: normal;
 }
-
-/* Mobile */
-#collapseExample {
-    position: absolute;
-    top: 60px;
-    z-index: 999;
-    background: #fff;
-    width: 100%;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
-    box-shadow: 0px 0px 5px 0px rgba(204,204,204,1);
-  }
-  .mobile-menu {
-      color: #fff;
-  }
-  .mobile-menu:hover, .mobile-menu:focus {
-      color: #fff;
-  }
-  #collapseExample .sidebar .card {
-      box-shadow: none;
-  }
-.content-top-mobile .cart {
-    width: 100%;
-    padding: 15px;
-}
 /* Menu */
 @media (max-width: 992px) {
     .nav-form, .content .sidebar, .content .content-top-desktop {
         display: none;
     }
+    .wrap-light {
+        border-bottom: none;
+    }
+    .wrap-light .container, .wrap-dark .container {
+        max-width: 100%;
+        padding-left: 0;
+    }
 }
 @media (min-width: 992px) {
-    #collapseExample, .mobile-menu {
+    .mobilecollapse, .mobile-menu {
         display: none;
     }
 }
@@ -398,6 +409,20 @@ font-size: 12px;
     .wrap-dark p {
         font-size: 9px;
         margin-top: -30px;
+    }
+}
+@media (max-width: 480px) {
+    .wrap-dark .navbar-brand img {
+        max-height: 40px;
+    }
+    .wrap-dark .navbar .envio {
+        max-height: 30px;
+    }
+    .wrap-dark p {
+        margin-top: -15px;
+    }
+    .wrap-light .nav-link { 
+        font-size: 12px;
     }
 }
 /* Changing breakpoint max and min width */
