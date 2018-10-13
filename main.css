@@ -424,6 +424,10 @@ font-size: 12px;
     .wrap-light .nav-link { 
         font-size: 12px;
     }
+    .content-right .carousel-control-next, .content-right .carousel-control-prev {
+        width: 12%;
+        height: 17%;
+    }
 }
 /* Changing breakpoint max and min width */
 @media (min-width: 1200px) {
